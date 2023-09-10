@@ -11,12 +11,14 @@
 <body>
 
     <header>
-
+        <div class="time"></div>
     </header>
 <!-- Starter Page -->
     <div id="startcard">
         <h2>Welcome to the JavaScript quiz!</h2>
-        <p>You will have ____ seconds to answer ___ questions. For every incorrect answer, ___ seconds will be deducted from the clock.
+        <p>You will have ____ seconds to answer ___ questions.
+            For every correct answer, ___ points will be added to your score.
+            For every incorrect answer, ___ seconds will be deducted from the clock.
             Press start to begin. Good luck!
         </p>
         <button id="startbtn" >Start</button>
@@ -121,7 +123,12 @@
             <li><button>switch statement</button></li>
         </ul>
     </div>
-    <!-- Results -->
+    <!-- Results & Form -->
+    <div id="summary_card" class="card_display">
+        <h3>Congrats, you're all done!</h3>
+        <div>Your final score is:<div id="scoreValue"></div></div>
+
+    </div>
     <foot>
         <ol id="result">
             <li>Correct!</li>
