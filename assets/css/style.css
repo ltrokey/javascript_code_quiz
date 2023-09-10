@@ -7,9 +7,13 @@
     display: none;
 }
 
+#result {
+    display: none;
+}
 
-
-
+li {
+    list-style:none;
+}
 
 
 @media (max-width: 690px) {
