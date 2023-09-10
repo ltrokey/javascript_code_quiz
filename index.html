@@ -125,10 +125,19 @@
     </div>
     <!-- Results & Form -->
     <div id="summary_card" class="card_display">
-        <h3>Congrats, you're all done!</h3>
-        <div>Your final score is:<div id="scoreValue"></div></div>
+        <form>
+            <h3>Congrats, you're all done!</h3>
+            <div>Your final score is:<div id="scoreValue"></div></div>
+            <div>Enter your initials:</div><input placeholder="initials" id="initials"/>
+            <button id="submitBtn">Save</button>
+        </form>
+    </div>
+    <!-- High Scores -->
+    <div id="high_scores" class="card_display" style="display: none;">
+        <h3>High Scores</h3>
 
     </div>
+
     <foot>
         <ol id="result">
             <li>Correct!</li>
