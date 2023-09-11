@@ -123,8 +123,71 @@ footer {
     display: none;
 }
 
+
+#summary_card {
+    padding-bottom: 2em;
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+    & h3 {
+        font-size: 150%;
+        padding: 1em;
+        color:#9932cc;
+    }
+    & div {
+        font-size: 125%;
+        font-family: fantasy;
+    }
+    & button {
+        padding: 5px;
+        font-size:medium;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        background-color: white;
+        color:#008080;
+        border: 2px solid #fcc200;
+        box-shadow: 2px 2px black;
+        border-radius: 8px;
+        &:hover {
+            color: white;
+            text-shadow: 1px 1px black;
+            background-color:#989898;
+            border-radius: 8px;
+        }
+    }
+}
+
 #high_scores {
-    display:none;
+    padding-bottom: 2em;
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+    display: none;
+    & h3 {
+        font-size: 150%;
+        padding: 1em;
+        color:#9932cc;
+    }
+    & ol {
+        font-size: 125%;
+        font-family: fantasy;
+    }
+    & button {
+        margin: 1em;
+        padding: 5px;
+        font-size:medium;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        background-color: white;
+        color:#008080;
+        border: 2px solid #fcc200;
+        box-shadow: 2px 2px black;
+        border-radius: 8px;
+        &:hover {
+            color:white;
+            text-shadow: 1px 1px black;
+            background-color:#ff9f00;
+            border-radius: 8px;
+        }
+    }
 }
 
 /* Class Selectors */
@@ -165,38 +228,6 @@ footer {
             color: white;
             text-shadow: 1px 1px black;
             background-color:#9932cc;
-            border-radius: 8px;
-        }
-    }
-}
-
-#summary_card {
-    padding-bottom: 2em;
-    text-align: center;
-    background-color: white;
-    border-radius: 8px;
-    & h3 {
-        font-size: 150%;
-        padding: 1em;
-        color:#9932cc;
-    }
-    & div {
-        font-size: 125%;
-        font-family: fantasy;
-    }
-    & button {
-        padding: 5px;
-        font-size:medium;
-        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        background-color: white;
-        color:#008080;
-        border: 2px solid #fcc200;
-        box-shadow: 2px 2px black;
-        border-radius: 8px;
-        &:hover {
-            color: white;
-            text-shadow: 1px 1px black;
-            background-color:#989898;
             border-radius: 8px;
         }
     }

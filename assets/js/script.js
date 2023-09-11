@@ -185,6 +185,7 @@ question7OptionBtns.forEach(function(button, index) {
         if (index === 1) {
             resultEl.children[0].style.display = 'block'
             resultEl.children[1].style.display = 'none'
+            score += 10
         } else {
             resultEl.children[1].style.display = 'block'
             resultEl.children[0].style.display = 'none'
@@ -301,7 +302,8 @@ highScoresLink.addEventListener('click', function (event) {
     event.preventDefault();
 
     if (highScoreContainer.style.display === 'none') {
-        highScoreContainer.style.display = 'block';
+        highScoreContainer.style.display = 'block'
+        listHighScores()
     } else {
         highScoreContainer.style.display = 'none';
     }
