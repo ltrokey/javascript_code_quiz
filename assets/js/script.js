@@ -5,56 +5,24 @@ var summaryCard = document.querySelector("#summary_card")
 var score = 0
 
 var timeEl = document.querySelector(".time")
-var secondsLeft = 10
+var secondsLeft = 100
 var gameOver = false
 
 var questionCardContainer = document.getElementById("question_card_container")
 
-var initialsInput = document.getElementById('initials')
-var submitBtn = document.getElementById('submitBtn')
-var highScores = []
-var highScoresContainer = document.getElementById('high_scores')
+var initialsInput = document.getElementById('initials');
+var submitBtn = document.getElementById('submitBtn');
 
-// submitBtn.addEventListener("click", function() {
-//     var userInitials = initialsInput.value
+var highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+var highScoresList = document.getElementById('scoreList');
+var highScoreContainer = document.getElementById("high_scores")
 
-//     if (userInitials.trim() === "") {
-//         alert("Please enter your initials.");
-//         return
-//     }
-
-//     var userScoreRecord = {
-//         initials: userInitials,
-//         score: score
-//     }
-
-//     highScores.push(userScoreRecord);
-
-//     initialsInput.value = "";
-
-//     displayHighScores()
-// });
-
-// function displayHighScores() {
-//     var storedHighScores = JSON.parse(localStorage.getItem("highScores")) || [];
-//     storedHighScores.push({ initials: userInitials, score: score });
-//     storedHighScores.sort((a, b) => b.score - a.score);
-//     localStorage.setItem("highScores", JSON.stringify(storedHighScores));
-//     highScoresContainer.innerHTML = "";
-//     for (var i = 0; i < storedHighScores.length; i++) {
-//         var scoreEntry = document.createElement('div');
-//         scoreEntry.textContent = storedHighScores[i].initials + ': ' + storedHighScores[i].score;
-//         highScoresContainer.appendChild(scoreEntry);
-//     }
-//     highScoresContainer.style.display = "block";
-// }
-
-
+var clearBtn = document.getElementById('clear_all_btn')
 
 function setTime() {
     var timeInterval = setInterval (function(){
         secondsLeft--;
-        timeEl.textContent = secondsLeft + " seconds remaining to complete quiz."
+        timeEl.textContent = "Time: " + secondsLeft + " seconds remaining to complete quiz."
         if(secondsLeft <= 0) {
             clearInterval(timeInterval);
             timeEl.textContent = "Sorry! You ran out of time, better luck next time!"
@@ -287,4 +255,54 @@ question10OptionBtns.forEach(function(button, index) {
         summaryCard.setAttribute("style", "display:block");
         document.getElementById('scoreValue').textContent = score
     });
+});
+
+
+function saveHighScore() {
+    var scoreObject = {
+        initials: initialsInput.value,
+        score: score,
+    };
+    highScores.push(scoreObject); 
+    localStorage.setItem('highScores', JSON.stringify(highScores)); 
+}
+
+function listHighScores() {
+    highScoresList.innerHTML = ''; 
+
+    highScores.sort((a, b) => b.score - a.score);
+
+    for (var i = 0; i < highScores.length; i++) {
+        var scoreEntry = document.createElement('li');
+        scoreEntry.textContent = highScores[i].initials + ': ' + highScores[i].score;
+        highScoresList.appendChild(scoreEntry);
+    }
+}
+
+submitBtn.addEventListener('click', function (event) {
+    event.preventDefault();
+    saveHighScore();
+    listHighScores();
+    summaryCard.setAttribute("style", "display:none");
+    highScoreContainer.setAttribute("style", "display:block")
+});
+
+clearBtn.addEventListener("click", function () {
+    localStorage.clear()
+    location.reload()
+})
+
+
+var highScoresLink = document.getElementById('high_scores_link');
+var highScoreContainer = document.getElementById('high_scores');
+
+
+highScoresLink.addEventListener('click', function (event) {
+    event.preventDefault();
+
+    if (highScoreContainer.style.display === 'none') {
+        highScoreContainer.style.display = 'block';
+    } else {
+        highScoreContainer.style.display = 'none';
+    }
 });

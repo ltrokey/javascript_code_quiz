@@ -162,10 +162,9 @@ p {
     }
 }
 
-/* .hidden {
-    visibility: hidden;
-} */
-
+#high_scores {
+    display:none;
+}
 .card_display {
     display: none;
 }

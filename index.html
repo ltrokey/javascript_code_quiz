@@ -14,7 +14,7 @@
         <div id="h1_container"><h1>JavaScript Quiz</h1></div>
         <nav>
             <ul>
-                <li><a href="#high_scores">High Scores</a></li>
+                <li><a href="#high_scores" id="high_scores_link">High Scores</a></li>
                 <li class="time">Time:</li>
             </ul>
         </nav>
@@ -23,9 +23,9 @@
         <div class="card_container">
             <div id="startcard" class="card_display">
                 <h2>Welcome to the JavaScript quiz!</h2>
-                <p>You will have ____ seconds to answer ___ questions.</p>
-                <p>For every correct answer, ___ points will be added to your score.</p>
-                <P>For every incorrect answer, ___ seconds will be deducted from the clock.</p>
+                <p>You will have 100 seconds to answer 10 questions.</p>
+                <p>For every correct answer, 10 points will be added to your score.</p>
+                <P>For every incorrect answer, 5 seconds will be deducted from the clock.</p>
                 <br>
                 <p>Press start to begin, good luck!</p>
                 <button id="startbtn" >Start</button>
@@ -152,12 +152,16 @@
                     <button id="submitBtn">Save</button>
                 </form>
             </div>
+
+            <!-- High Scores -->
+            <div id="high_scores">
+                <h3>High Scores</h3>
+                <ol id="scoreList"></ol>
+                <button id="clear_all_btn">Clear High Scores</button>
+
+            </div>
         </div>
 
-        <!-- High Scores -->
-        <div id="high_scores" class="card_display" style="display: none;">
-            <h3>High Scores</h3>
-        </div>
     </main>
 
     <footer>
