@@ -11,139 +11,161 @@
 <body>
 
     <header>
-        <div class="time"></div>
+        <div id="h1_container"><h1>JavaScript Quiz</h1></div>
+        <nav>
+            <ul>
+                <li><a href="#high_scores">High Scores</a></li>
+                <li class="time">Time:</li>
+            </ul>
+        </nav>
     </header>
-<!-- Starter Page -->
-    <div id="startcard">
-        <h2>Welcome to the JavaScript quiz!</h2>
-        <p>You will have ____ seconds to answer ___ questions.
-            For every correct answer, ___ points will be added to your score.
-            For every incorrect answer, ___ seconds will be deducted from the clock.
-            Press start to begin. Good luck!
-        </p>
-        <button id="startbtn" >Start</button>
-    </div>
-    <!-- Questions 1 -->
-    <div id="question_1" class="card_display">
-        <h3>What is JavaScript primarily used for?</h3>
-        <ul>
-            <li><button class="option_1">Styling Web Pages</button></li>
-            <li><button class="option_2">Creating and manipulating web content</button></li>
-            <li><button class="option_3">Managing server databases</button></li>
-            <li><button class="option_4">Building mobile apps</button></li>
-        </ul>
-    </div>
-    <!-- Questions 2 -->
-    <div id="question_2" class="card_display">
-        <h3>Which keyword is used to declare a variable in JavaScript?</h3>
-        <ul>
-            <li><button>Var</button></li>
-            <li><button>Let</button></li>
-            <li><button>Const</button></li>
-            <li><button>Variable</button></li>
-        </ul>
-    </div>
-    <!-- Questions 3 -->
-    <div id="question_3" class="card_display">
-        <h3>What does the "DOM" stand for in JavaScript?</h3>
-        <ul>
-            <li><button>Document Object Model</button></li>
-            <li><button>Data Object Model</button></li>
-            <li><button>Document Order Model</button></li>
-            <li><button>Dynamic Object Manipulation</button></li>
-        </ul>
-    </div>
-    <!-- Questions 4 -->
-    <div id="question_4" class="card_display">
-        <h3>Which of the following is not a primitive data type in JavaScript?</h3>
-        <ul>
-            <li><button>String</button></li>
-            <li><button>Boolean</button></li>
-            <li><button>Object</button></li>
-            <li><button>Number</button></li>
-        </ul>
-    </div>
-    <!-- Questions 5 -->
-    <div id="question_5" class="card_display">
-        <h3>Which operator is used for strict equality comparison in JavaScript?</h3>
-        <ul>
-            <li><button>==</button></li>
-            <li><button>===</button></li>
-            <li><button>=</button></li>
-            <li><button>!=</button></li>
-        </ul>
-    </div>
-    <!-- Questions 6 -->
-    <div id="question_6" class="card_display">
-        <h3>How do you comment a single-line in JavaScript?</h3>
-        <ul>
-            <li><button>//</button></li>
-            <li><button>/* */</button></li>
-            <li><button>' '</button></li>
-            <li><button># #</button></li>
-        </ul>
-    </div>
-    <!-- Questions 7 -->
-    <div id="question_7" class="card_display">
-        <h3>What is an array in JavaScript?</h3>
-        <ul>
-            <li><button>A data structure for storing key-value pairs</button></li>
-            <li><button>Collection of elements stored in a linear sequence</button></li>
-            <li><button>A set of conditional statements</button></li>
-            <li><button>A mathematical function</button></li>
-        </ul>
-    </div>
-    <!-- Questions 8 -->
-    <div id="question_8" class="card_display">
-        <h3>Which function is used to add an element to the end of an array in JavaScript?</h3>
-        <ul>
-            <li><button>push()</button></li>
-            <li><button>pop()</button></li>
-            <li><button>shift()</button></li>
-            <li><button>unshift()</button></li>
-        </ul>
-    </div>
-    <!-- Questions 9 -->
-    <div id="question_9" class="card_display">
-        <h3>What does the "if" statement do in JavaScript?</h3>
-        <ul>
-            <li><button>It defines a function</button></li>
-            <li><button>It loops through an array</button></li>
-            <li><button>It performs a conditional check</button></li>
-            <li><button>It creates a new variable</button></li>
-        </ul>
-    </div>
-    <!-- Questions 10 -->
-    <div id="question_10" class="card_display">
-        <h3>What method is used to execute a block of code repeatedly in JavaScript?</h3>
-        <ul>
-            <li><button>for-in loop</button></li>
-            <li><button>while loop</button></li>
-            <li><button>if-else statement</button></li>
-            <li><button>switch statement</button></li>
-        </ul>
-    </div>
-    <!-- Results & Form -->
-    <div id="summary_card" class="card_display">
-        <form>
-            <h3>Congrats, you're all done!</h3>
-            <div>Your final score is:<div id="scoreValue"></div></div>
-            <div>Enter your initials:</div><input placeholder="initials" id="initials"/>
-            <button id="submitBtn">Save</button>
-        </form>
-    </div>
-    <!-- High Scores -->
-    <div id="high_scores" class="card_display" style="display: none;">
-        <h3>High Scores</h3>
+    <main>
+        <div class="card_container">
+            <div id="startcard" class="card_display">
+                <h2>Welcome to the JavaScript quiz!</h2>
+                <p>You will have ____ seconds to answer ___ questions.</p>
+                <p>For every correct answer, ___ points will be added to your score.</p>
+                <P>For every incorrect answer, ___ seconds will be deducted from the clock.</p>
+                <br>
+                <p>Press start to begin, good luck!</p>
+                <button id="startbtn" >Start</button>
+            </div>
+    
+            <div id="question_card_container">
+                    <!-- Questions 1 -->
+                <div id="question_1" class="card_display question_cards">
+                    <h3>What is JavaScript primarily used for?</h3>
+                    <ul class="optionbtns">
+                        <li><button class="option_1">Styling Web Pages</button></li>
+                        <li><button class="option_2">Creating and manipulating web content</button></li>
+                        <li><button class="option_3">Managing server databases</button></li>
+                        <li><button class="option_4">Building mobile apps</button></li>
+                    </ul>
+                </div>
+        
+                <!-- Questions 2 -->
+                <div id="question_2" class="card_display question_cards">
+                    <h3>Which keyword is used to declare a variable in JavaScript?</h3>
+                    <ul class="optionbtns">
+                        <li><button>Var</button></li>
+                        <li><button>Let</button></li>
+                        <li><button>Const</button></li>
+                        <li><button>Variable</button></li>
+                    </ul>
+                </div>
+        
+                <!-- Questions 3 -->
+                <div id="question_3" class="card_display question_cards">
+                    <h3>What does the "DOM" stand for in JavaScript?</h3>
+                    <ul class="optionbtns">
+                        <li><button>Document Object Model</button></li>
+                        <li><button>Data Object Model</button></li>
+                        <li><button>Document Order Model</button></li>
+                        <li><button>Dynamic Object Manipulation</button></li>
+                    </ul>
+                </div>
+        
+                <!-- Questions 4 -->
+                <div id="question_4" class="card_display question_cards">
+                    <h3>Which of the following is not a primitive data type in JavaScript?</h3>
+                    <ul class="optionbtns">
+                        <li><button>String</button></li>
+                        <li><button>Boolean</button></li>
+                        <li><button>Object</button></li>
+                        <li><button>Number</button></li>
+                    </ul>
+                </div>
+        
+                <!-- Questions 5 -->
+                <div id="question_5" class="card_display question_cards">
+                    <h3>Which operator is used for strict equality comparison in JavaScript?</h3>
+                    <ul class="optionbtns">
+                        <li><button>==</button></li>
+                        <li><button>===</button></li>
+                        <li><button>=</button></li>
+                        <li><button>!=</button></li>
+                    </ul>
+                </div>
+        
+                <!-- Questions 6 -->
+                <div id="question_6" class="card_display question_cards">
+                    <h3>How do you comment a single-line in JavaScript?</h3>
+                    <ul class="optionbtns">
+                        <li><button>//</button></li>
+                        <li><button>/* */</button></li>
+                        <li><button>' '</button></li>
+                        <li><button># #</button></li>
+                    </ul>
+                </div>
+        
+                <!-- Questions 7 -->
+                <div id="question_7" class="card_display question_cards">
+                    <h3>What is an array in JavaScript?</h3>
+                    <ul class="optionbtns">
+                        <li><button>A data structure for storing key-value pairs</button></li>
+                        <li><button>Collection of elements stored in a linear sequence</button></li>
+                        <li><button>A set of conditional statements</button></li>
+                        <li><button>A mathematical function</button></li>
+                    </ul>
+                </div>
+        
+                <!-- Questions 8 -->
+                <div id="question_8" class="card_display question_cards">
+                    <h3>Which function is used to add an element to the end of an array in JavaScript?</h3>
+                    <ul class="optionbtns">
+                        <li><button>push()</button></li>
+                        <li><button>pop()</button></li>
+                        <li><button>shift()</button></li>
+                        <li><button>unshift()</button></li>
+                    </ul>
+                </div>
+        
+                <!-- Questions 9 -->
+                <div id="question_9" class="card_display question_cards">
+                    <h3>What does the "if" statement do in JavaScript?</h3>
+                    <ul class="optionbtns">
+                        <li><button>It defines a function</button></li>
+                        <li><button>It loops through an array</button></li>
+                        <li><button>It performs a conditional check</button></li>
+                        <li><button>It creates a new variable</button></li>
+                    </ul>
+                </div>
+        
+                <!-- Questions 10 -->
+                <div id="question_10" class="card_display question_cards">
+                    <h3>What method is used to execute a block of code repeatedly in JavaScript?</h3>
+                    <ul class="optionbtns">
+                        <li><button>for-in loop</button></li>
+                        <li><button>while loop</button></li>
+                        <li><button>if-else statement</button></li>
+                        <li><button>switch statement</button></li>
+                    </ul>
+                </div>
+            </div>
 
-    </div>
+            <!-- Results & Form -->
+            <div id="summary_card" class="card_display">
+                <form>
+                    <h3>Congrats, you're all done!</h3>
+                    <div>Your final score is:<div id="scoreValue"></div></div>
+                    <div>Enter your initials:</div><input placeholder="initials" id="initials"/>
+                    <button id="submitBtn">Save</button>
+                </form>
+            </div>
+        </div>
 
-    <foot>
+        <!-- High Scores -->
+        <div id="high_scores" class="card_display" style="display: none;">
+            <h3>High Scores</h3>
+        </div>
+    </main>
+
+    <footer>
         <ol id="result">
             <li>Correct!</li>
             <li>Incorrect!</li>
         </ol>
-    </foot>
+    </footer>
 
     <script src="./assets/js/script.js"></script>
 </body>

@@ -8,6 +8,49 @@ var timeEl = document.querySelector(".time")
 var secondsLeft = 10
 var gameOver = false
 
+var questionCardContainer = document.getElementById("question_card_container")
+
+var initialsInput = document.getElementById('initials')
+var submitBtn = document.getElementById('submitBtn')
+var highScores = []
+var highScoresContainer = document.getElementById('high_scores')
+
+// submitBtn.addEventListener("click", function() {
+//     var userInitials = initialsInput.value
+
+//     if (userInitials.trim() === "") {
+//         alert("Please enter your initials.");
+//         return
+//     }
+
+//     var userScoreRecord = {
+//         initials: userInitials,
+//         score: score
+//     }
+
+//     highScores.push(userScoreRecord);
+
+//     initialsInput.value = "";
+
+//     displayHighScores()
+// });
+
+// function displayHighScores() {
+//     var storedHighScores = JSON.parse(localStorage.getItem("highScores")) || [];
+//     storedHighScores.push({ initials: userInitials, score: score });
+//     storedHighScores.sort((a, b) => b.score - a.score);
+//     localStorage.setItem("highScores", JSON.stringify(storedHighScores));
+//     highScoresContainer.innerHTML = "";
+//     for (var i = 0; i < storedHighScores.length; i++) {
+//         var scoreEntry = document.createElement('div');
+//         scoreEntry.textContent = storedHighScores[i].initials + ': ' + storedHighScores[i].score;
+//         highScoresContainer.appendChild(scoreEntry);
+//     }
+//     highScoresContainer.style.display = "block";
+// }
+
+
+
 function setTime() {
     var timeInterval = setInterval (function(){
         secondsLeft--;
@@ -16,6 +59,8 @@ function setTime() {
             clearInterval(timeInterval);
             timeEl.textContent = "Sorry! You ran out of time, better luck next time!"
             summaryCard.setAttribute("style", "display:block");
+            questionCardContainer.setAttribute("style", "display:none")
+            resultEl.setAttribute("style", "display:none")
             document.getElementById('scoreValue').textContent = score
         } else if(gameOver) {
             clearInterval(timeInterval);
@@ -38,7 +83,7 @@ var question10 = document.querySelector("#question_10")
 var resultEl = document.getElementById('result')
 
 startBtn.addEventListener("click", function() {
-    startCard.setAttribute("class", "hidden")
+    startCard.setAttribute("style", "display:none")
     setTime()
     question1.setAttribute("style", "display:block")
 });
