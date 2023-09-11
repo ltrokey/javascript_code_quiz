@@ -22,7 +22,7 @@ var clearBtn = document.getElementById('clear_all_btn')
 function setTime() {
     var timeInterval = setInterval (function(){
         secondsLeft--;
-        timeEl.textContent = "Time: " + secondsLeft + " seconds remaining to complete quiz."
+        timeEl.textContent = "Time: " + secondsLeft
         if(secondsLeft <= 0) {
             clearInterval(timeInterval);
             timeEl.textContent = "Sorry! You ran out of time, better luck next time!"
